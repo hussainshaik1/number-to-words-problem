@@ -1,0 +1,19 @@
+step:1 Start
+step:2 Take input as given_dictionary and given_expressions
+step:3 convert step 2 into dictionary by using eval()
+step:4 itrate over step 3  by using for loop
+step:5 accessing kyes and values from the given_dictonary
+	keys = list(given_dictionary.keys())
+	values = list(given_dictionary.values())
+step:6 if A and B :
+		result = given_dictionary[values] + given_dictionary[values]
+	elif A and C:
+		result = given_dictionary[values] + given_dictionary[values]
+	elif D or B:
+		result = given_dictionary[values]
+	elif A or B:
+		result = given_dictionary[values]
+	elif A and B and C:
+		result = given_dictionary[values] + given_dictionary[values] + given_dictionary[values]
+step:7 print result
+step:8 end
