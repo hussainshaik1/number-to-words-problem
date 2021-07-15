@@ -1,0 +1,47 @@
+ones = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
+nty = ['','','Twenty','Thirty','Fourty','Fifty','Sixty','Seventy','Eighty','Ninety']
+tens = ['Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen']
+high = ['Hundred','Thousand','Million','Billion']
+
+def into_words(i):
+	num = ' '
+	a = i%100
+	if 0 != a < 10:
+		num += ones[a]
+	elif 10 <= a < 20:
+		num += tens[a%10]
+	elif 20 <= a:
+		num += nty[a//10] + ' ' + ones[a%10]
+	b = i//100
+	if b != 0:
+		num = ones[b] + ' ' + high[0] + ' ' + num
+	return num 
+		
+	 	
+
+
+
+def num_to_word(number):
+	if number == 0:
+		return ones[number]
+	else:
+		num_list = []
+		while number > 0:
+			a = number % 1000
+			num_list.append(a)
+			number = number//1000
+			reverse_list = num_list[::-1]
+		num = ''
+		j = len(num_list)
+		for i in reverse_list:
+			num += into_words(i)
+			if j != 1:
+				num += ' ' + high[j-1] + ' '
+				j -= 1
+		return num	
+
+
+
+number = int(input())     #1234567
+result = num_to_word(number)
+print(result + ' ' + 'dollars')    # One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven dollars
